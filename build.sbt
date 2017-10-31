@@ -1,7 +1,10 @@
 /*** Common Settings ***/
 
+val scalaV211 = "2.11.11"
+val scalaV212 = "2.12.3"
 organization in ThisBuild := "com.paytmlabs.akka"
-scalaVersion in ThisBuild := "2.11.8"
+scalaVersion in ThisBuild := scalaV211
+crossScalaVersions in ThisBuild := Seq(scalaV211, scalaV212)
 version in ThisBuild := "0.1.0-SNAPSHOT"
 
 publishTo in ThisBuild := {
@@ -48,10 +51,10 @@ lazy val discoveryElb = (project in file("discovery/elb"))
 
 /*** Dependencies ***/
 
-val AKKA_VERSION                    = "2.4.17"
-val AWS_SDK_VERSION                 = "1.11.89"
-val SCALA_MOCK_VERSION              = "3.2.2"
-val SCALATEST_VERSION               = "3.0.0"
+val AKKA_VERSION                    = "2.5.6"
+val AWS_SDK_VERSION                 = "1.11.206"
+val SCALA_MOCK_VERSION              = "3.6.0"
+val SCALATEST_VERSION               = "3.0.1"
 
 val akkaActor              = "com.typesafe.akka"      %% "akka-actor"               % AKKA_VERSION
 val akkaRemote             = "com.typesafe.akka"      %% "akka-remote"              % AKKA_VERSION
